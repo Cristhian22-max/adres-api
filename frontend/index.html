@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gestión de Adquisiciones - ADRES</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <img src="logo-adres.png" alt="Logo ADRES" id="logo-adres" />
+    <h1>Gestión de Adquisiciones</h1>
+  </header>
+
+  <div class="contenedor-flex">
+    <div class="columna-formulario">
+      <form id="form-adquisicion" enctype="multipart/form-data">
+        <input type="number" name="presupuesto" id="presupuesto" placeholder="Presupuesto" required />
+        <input type="text" name="unidad" placeholder="Unidad" required />
+        <input type="text" name="tipo" placeholder="Tipo de Bien o Servicio" required />
+        <input type="number" name="cantidad" id="cantidad" placeholder="Cantidad" required />
+        <input type="number" name="valorUnitario" id="valorUnitario" placeholder="Valor Unitario" required />
+        <input type="text" name="valorTotal" id="valorTotal" placeholder="Valor Total" readonly />
+        <input type="date" name="fecha" placeholder="Fecha de Adquisición" required />
+        <input type="text" name="proveedor" placeholder="Proveedor" required />
+        <input type="file" name="documentacion" id="documentacion" accept="application/pdf" required />
+        <button type="submit" id="btn-submit">Crear Adquisición</button>
+      </form>
+    </div>
+
+    <div class="columna-listado">
+      <button onclick="alternarListado()">Ver Listado de Adquisiciones</button>
+      <input type="text" id="filtro" placeholder="Filtrar por unidad o proveedor..." />
+      <h2 id="titulo-listado">Listado de Adquisiciones</h2>
+      <div id="listado"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
